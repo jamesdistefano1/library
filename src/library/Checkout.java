@@ -22,6 +22,8 @@ public class Checkout {
 			System.out.println("Press 2 to check out an item");
 			System.out.println("Press 3 to return an item");
 			System.out.println("Press 4 to print the items currently checked in");
+			System.out.println("Press 5 to print all books currently checked in");
+			System.out.println("Press 6 to print all movies currently checked in");
 			int theChoice = choice.nextInt(); 
 			switch(theChoice) {
 			case 1:
@@ -39,8 +41,23 @@ public class Checkout {
 				}
 				break;
 			// add case to print out all books and all movies
+			case 5:
+				for(Item i: inLibrary) {
+					if(i instanceof Book) {
+						System.out.println(i.getTitle());
+					}
+				}
+				break;
+			case 6:
+				for(Item i: inLibrary) {
+					if(i instanceof Movie) {
+						System.out.println(i.getTitle());
+					}
+				}
+				break;
 			default:
-				System.out.println("Please enter a number 1 - 4");			
+				System.out.println("Please enter a number 1 - 6");	
+				break;
 			}
 			System.out.println("");	
 		}
